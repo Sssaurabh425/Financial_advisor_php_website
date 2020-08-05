@@ -1,0 +1,55 @@
+<html>
+    <head>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+		input[type="text"]#subdomaintwo{
+    -webkit-appearance:none!important;
+    color:black;
+    text-align:right;
+    width:180px;
+    border:1px solid black;
+    margin:10 10 10 27px;
+    background:white;
+}
+
+</style>
+    </head>
+    <body>
+        <form method="post" action="send_mail.php">
+        To :         Developer  <input type="hidden" name="mail_to" value="ssaurabh425@gmail.com"> <br/>
+        Subject :   <input type="text" name="mail_sub" placeholder="Enter Subject" id="subdomaintwo" />
+       <br/>
+         Message   <textarea rows="4" cols="30" name="mail_msg" placeholder="Enter Message" id="subdomaintwo" ></textarea>
+		 
+        <br/>
+		
+		<p id="demo"></p>
+		
+		</br>
+            <input type="submit" value="Send Email">
+			
+        </form>	
+<button onclick="getLocation()">Get Location</button>
+
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "https://www.latlong.net/c/?lat=" + position.coords.latitude + 
+    "&long=" + position.coords.longitude;
+}
+</script>
+
+		  			
+    </body>
+</html>
